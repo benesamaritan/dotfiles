@@ -69,8 +69,8 @@ layer-rule {
     match namespace="dms:blurwallpaper"
     place-within-backdrop true
 }
-//spawn-at-startup ""
 
+//spawn-at-startup ""
 // spawn-sh-at-startup ""
 
 hotkey-overlay {
@@ -86,6 +86,11 @@ animations {
 }
 
 window-rule {
+    geometry-corner-radius 8
+    clip-to-geometry true
+}
+
+window-rule {
     match title="^Picture-in-Picture$"
     open-floating true
     block-out-from "screen-capture"
@@ -96,34 +101,21 @@ window-rule {
       off 
     }
     shadow {
-        on
-        softness 20
-        spread 3
-        offset x=0 y=0
-        color "#000000"
+      on
+      softness 20
+      spread 3
+      offset x=0 y=0
+      color "#000000"
     }
-
 }
 
 window-rule {
-    match title="clickable$"
+    match app-id="showmethekey-gtk"
     open-floating true
-    default-floating-position x=15 y=15 relative-to="bottom-right"
-    default-column-width { proportion 0.60; }
-
-    border {
-      off 
-    }
-    shadow {
-        on
-        softness 20
-        spread 3
-        offset x=0 y=0
-        color "#00000060"
-    }
-
+    default-floating-position x=15 y=15 relative-to="bottom"
+    min-height 100
+    max-height 100
 }
-
 
 window-rule {
     match app-id="osu!" 
@@ -139,11 +131,6 @@ window-rule {
 
     // Use this instead if you want them visible on third-party screenshot tools.
     // block-out-from "screencast"
-}
-
-window-rule {
-    geometry-corner-radius 8
-    clip-to-geometry true
 }
 
 window-rule {
@@ -302,7 +289,7 @@ binds {
     Mod+Shift+Minus { set-window-height "-10%"; }
     Mod+Shift+Equal { set-window-height "+10%"; }
 
-    Mod+V       { toggle-window-floating; }
+    Mod+Alt+V       { toggle-window-floating; }
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
     Mod+W { toggle-column-tabbed-display; }
 
@@ -323,4 +310,5 @@ include "dms/layout.kdl"
 include "dms/alttab.kdl"
 include "dms/wpblur.kdl"
 include "dms/binds.kdl"
+include "key.kdl"
 
