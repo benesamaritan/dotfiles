@@ -1,4 +1,4 @@
 layer-rule {
     match namespace="dms:blurwallpaper"
-    place-within-backdrop true
+    place-within-backdrop false
 }
