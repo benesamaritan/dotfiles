@@ -87,7 +87,7 @@ layer-rule {
   block-out-from "screen-capture"
 }
 
-//spawn-at-startup ""
+spawn-at-startup "nsticky"
 // spawn-sh-at-startup ""
 
 hotkey-overlay {
