@@ -34,6 +34,7 @@ local config = {
   tab_bar_at_bottom = true,
   -- show_tabs_in_tab_bar = false,
   show_new_tab_button_in_tab_bar = false,
+  tab_max_width = 25,
   inactive_pane_hsb = {
     saturation = 0.9,
     brightness = 0.8,
@@ -89,6 +90,20 @@ tabline.setup({
         'workspace',
         icons_only = true,
       }
+    },
+    tab_active = {
+      {
+        'index',
+        zero_indexed = true,
+      },
+      { 'parent', padding = 0 },
+      '/',
+      {
+        'cwd',
+        padding = { left = 0, right = 1 },
+        max_length = 8,
+      },
+      { 'zoomed', padding = 0 },
     },
     tabline_z = {
       {
