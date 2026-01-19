@@ -1,12 +1,6 @@
 local wezterm = require "wezterm"
 
--- local function scheme_for_appearance(appearance)
---   if appearance:find "Dark" then
---     return "Catppuccin Mocha"
---   else
---     return "Catppuccin Latte"
---   end
--- end
+wezterm.add_to_config_reload_watch_list(wezterm.config_dir .. "/colors/dank-theme.toml")
 
 -- wezterm.on('update-right-status', function(window, pane)
 --   window:set_left_status 'left'
@@ -14,13 +8,12 @@ local wezterm = require "wezterm"
 -- end)
 
 local config = {
-  initial_cols = 120,
-  initial_rows = 28,
-  font_size = 12,
+  -- initial_cols = 120,
+  -- initial_rows = 28,
+  font_size = 15,
   font = wezterm.font "JetBrains Mono",
   -- color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
-  color_scheme = "Catppuccin Mocha",
-  -- enable_tab_bar = false,
+  color_scheme = "dank-theme",
   window_padding = {
     left = 10,
     right = 10,
@@ -32,7 +25,6 @@ local config = {
   use_fancy_tab_bar = false,
   hide_tab_bar_if_only_one_tab = false,
   tab_bar_at_bottom = true,
-  -- show_tabs_in_tab_bar = false,
   show_new_tab_button_in_tab_bar = false,
   tab_max_width = 25,
   inactive_pane_hsb = {
@@ -41,37 +33,40 @@ local config = {
   },
 }
 
+local colors = wezterm.color.load_scheme(wezterm.config_dir .. "/colors/dank-theme.toml")
+
 local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
 tabline.setup({
  options = {
-    theme_overrides = {
-      normal_mode = {
-        a = { fg = '#181825', bg = '#f5c2e7' },
-        b = { fg = '#f5c2e7', bg = '#313244' },
-        c = { fg = '#cdd6f4', bg = '#181825' },
-      },
-      copy_mode = {
-        a = { fg = '#181825', bg = '#f9e2af' },
-        b = { fg = '#f9e2af', bg = '#313244' },
-        c = { fg = '#cdd6f4', bg = '#181825' },
-      },
-      search_mode = {
-        a = { fg = '#181825', bg = '#a6e3a1' },
-        b = { fg = '#a6e3a1', bg = '#313244' },
-        c = { fg = '#cdd6f4', bg = '#181825' },
-      },
-      window_mode = {
-        a = { fg = '#181825', bg = '#cba6f7' },
-        b = { fg = '#cba6f7', bg = '#313244' },
-        c = { fg = '#cdd6f4', bg = '#181825' },
-      },
-      tab = {
-        active = { fg = '#1e1e2e', bg = '#f5c2e7' },
-        inactive = { fg = '#cdd6f4', bg = '#1e1e2e' },
-        inactive_hover = { fg = '#f5c2e7', bg = '#313244' },
-      }
-    },
-    section_separators = {
+    theme = colors,
+    -- theme_overrides = {
+    --   normal_mode = {
+    --     a = { fg = colors.foreground, bg = colors.ansi[2] },
+    --     b = { fg = colors.ansi[2], bg = colors.background },
+    --     c = { fg = colors.foreground, bg = colors.background },
+    --   },
+    --   copy_mode = {
+    --     a = { fg = colors.background, bg = colors.ansi[3] },
+    --     b = { fg = colors.ansi[3], bg = colors.background },
+    --     c = { fg = colors.foreground, bg = colors.background },
+    --   },
+    --   search_mode = {
+    --     a = { fg = colors.background, bg = colors.ansi[4] },
+    --     b = { fg = colors.ansi[4], bg = colors.background },
+    --     c = { fg = colors.foreground, bg = colors.background },
+    --   },
+    --   window_mode = {
+    --     a = { fg = colors.background, bg = colors.ansi[5] },
+    --     b = { fg = colors.ansi[5], bg = colors.background },
+    --     c = { fg = colors.foreground, bg = colors.background },
+    --   },
+    --   tab = {
+    --     active = { fg = colors.ansi[7], bg = colors.background },
+    --     inactive = { fg = colors.foreground, bg = colors.background },
+    --     inactive_hover = { fg = colors.brights[7], bg = colors.background },
+    --   }
+    -- },
+   section_separators = {
       left = wezterm.nerdfonts.ple_right_half_circle_thick,
       right = wezterm.nerdfonts.ple_left_half_circle_thick,
     },
@@ -113,5 +108,11 @@ tabline.setup({
     },
   },
 })
+tabline.set_theme(colors)
+
+wezterm.on("window-config-reloaded", function(window, pane)
+  tabline.set_theme(colors)
+  tabline.refresh(window)
+end)
 
 return config
