@@ -17,9 +17,9 @@ local config = {
     },
   },
   window_padding = {
-    left = 4,
-    right = 4,
-    top = 6,
+    left = 12,
+    right = 12,
+    top = 12,
     bottom = 2,
   },
   window_background_opacity = 0.85,

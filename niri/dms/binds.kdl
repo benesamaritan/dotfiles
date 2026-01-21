@@ -23,7 +23,7 @@ binds {
     Mod+S hotkey-overlay-title="Screenshot Rectangle" { spawn "dms" "screenshot"; }
     Mod+Alt+S hotkey-overlay-title="Screenshot Single Window" { spawn "dms" "ipc" "call" "niri" "screenshotWindow"; }
     Mod+Ctrl+S hotkey-overlay-title="Screenshot Fullscreen" { spawn "dms" "screenshot" "full"; }
-    Mod+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
+    Mod+Return hotkey-overlay-title="Open Terminal" { spawn "wezterm"; }
     Mod+O repeat=false hotkey-overlay-title="Toggle Overview" { toggle-overview; }
     Mod+Q repeat=false hotkey-overlay-title="Close Window" { close-window; }
     Mod+F hotkey-overlay-title="Maximize Column" { maximize-column; }

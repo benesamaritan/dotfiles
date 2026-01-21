@@ -13,8 +13,8 @@
 )
 
 (defvar
-  ttime 200
-  htime 220
+  ttime 250
+  htime 200
 )
 
 (defalias
@@ -40,8 +40,8 @@
   DH (layer-switch colemakdh)
   DHl (layer-switch colemakdhlight)
   QW (layer-switch qwerty)
-  laltM (tap-hold $ttime $htime esc lalt)
-  raltM (tap-hold $ttime $htime ret ralt)
+  laltM (tap-hold $ttime $htime ret lalt)
+  raltM (tap-hold $ttime $htime esc ralt)
 )
 
 (deflayer colemakdh

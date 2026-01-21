@@ -1,0 +1,56 @@
+{
+  "appShortcut": {
+    "enabled": true
+  },
+  "niriWindows": {
+    "enabled": false
+  },
+  "nixMonitor": {
+    "enabled": false
+  },
+  "dankBatteryAlerts": {
+    "enabled": true
+  },
+  "powerUsagePlugin": {
+    "enabled": true
+  },
+  "displayManager": {
+    "enabled": true,
+    "brightness_DP-1": 49.86552254098361,
+    "contrast_DP-1": 50.105660860655746
+  },
+  "webSearch": {
+    "enabled": true,
+    "defaultEngine": "brave",
+    "searchEngines": []
+  },
+  "mediaPlayer": {
+    "enabled": true
+  },
+  "dankPomodoroTimer": {
+    "enabled": true
+  },
+  "calculator": {
+    "enabled": true,
+    "trigger": "="
+  },
+  "wallpaperShufflerPlugin": {
+    "enabled": false,
+    "wallpaperPath": "~/clonedrepo/images/dark",
+    "shuffleInterval": "900"
+  },
+  "dankLauncherKeys": {
+    "enabled": false
+  },
+  "prayerTimes": {
+    "enabled": true
+  },
+  "prayerTimesPlugin": {
+    "lon": "111.6322278",
+    "lat": "-2.6853911",
+    "refreshInterval": 30
+  },
+  "desktopCommand": {
+    "enabled": true
+  }
+}
