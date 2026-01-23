@@ -13,7 +13,7 @@ local config = {
   color_scheme = "dank-theme",
   colors = {
     tab_bar = {
-      background = colors.ansi[1] or "transparent",
+      background = "transparent" or colors.ansi[1],
     },
   },
   window_padding = {
@@ -40,7 +40,7 @@ tabline.setup({
     theme = colors,
     theme_overrides = {
       normal_mode = {
-        a = { fg = colors.ansi[5], bg = colors.ansi[1] },
+        a = { fg = colors.ansi[1], bg = colors.ansi[6] },
         x = { fg = colors.ansi[5], bg = colors.ansi[9] },
         y = { fg = colors.ansi[1], bg = colors.ansi[6] },
       },
