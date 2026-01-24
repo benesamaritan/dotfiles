@@ -1,6 +1,9 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-format = "$all"
+format = """
+${custom.devbox}\
+$all\
+"""
 
 palette = 'catppuccin_mocha'
 command_timeout = 3600
@@ -276,3 +279,9 @@ symbol = " "
 
 [zig]
 symbol = " "
+
+[custom.devbox]
+description = "Devbox shell indicator"
+when = "printenv DEVBOX_SHELL_ENABLED"
+symbol = "📦 "
+format = "$symbol (Devbox) "
