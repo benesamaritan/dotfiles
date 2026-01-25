@@ -148,10 +148,10 @@ layer-rule {
   block-out-from "screen-capture"
 }
 
-// layer-rule {
-//   match namespace="^quickshell$"
-//   place-within-backdrop true
-// }
+layer-rule {
+  match namespace="^quickshell$"
+  place-within-backdrop true
+}
 
 /-window-rule {
   // geometry-corner-radius 8
