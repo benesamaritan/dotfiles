@@ -96,6 +96,14 @@ tabline.setup({
         padding = 0
       },
     },
+    tab_inactive =
+      {
+        {
+          'process',
+          padding = { left = 0, right = 1 },
+          max_length = 1,
+        }
+      },
     tabline_y = {
       'datetime',
       {
