@@ -1,9 +1,9 @@
 {
   "appShortcut": {
-    "enabled": true
+    "enabled": false
   },
   "niriWindows": {
-    "enabled": false
+    "enabled": true
   },
   "nixMonitor": {
     "enabled": false
@@ -12,10 +12,10 @@
     "enabled": true
   },
   "powerUsagePlugin": {
-    "enabled": true
+    "enabled": false
   },
   "displayManager": {
-    "enabled": true,
+    "enabled": false,
     "brightness_DP-1": 49.86552254098361,
     "contrast_DP-1": 50.105660860655746
   },
@@ -40,10 +40,10 @@
     "shuffleInterval": "900"
   },
   "dankLauncherKeys": {
-    "enabled": false
+    "enabled": true
   },
   "prayerTimes": {
-    "enabled": true
+    "enabled": false
   },
   "prayerTimesPlugin": {
     "lon": "111.6322278",

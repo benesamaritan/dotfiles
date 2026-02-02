@@ -274,7 +274,7 @@
   "matugenTemplateQt6ct": true,
   "matugenTemplateFirefox": true,
   "matugenTemplatePywalfox": false,
-  "matugenTemplateZenBrowser": false,
+  "matugenTemplateZenBrowser": true,
   "matugenTemplateVesktop": false,
   "matugenTemplateEquibop": false,
   "matugenTemplateGhostty": false,

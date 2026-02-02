@@ -11,4 +11,55 @@ normal = "block"
 select = "underline"
 
 [editor.file-picker]
-hidden = true
+hidden = false
+max-depth = 10
+
+[editor.soft-wrap]
+enable = true
+max-wrap = 20
+
+[editor.smart-tab]
+enable = false
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+diagnostics = ["warning", "error"]
+workspace-diagnostics = ["warning", "error"]
+
+# [editor.whitespace]
+# render = "all"
+
+[editor.whitespace.render]
+space = "all"
+tab = "all"
+nbsp = "all"
+nnbsp = "all"
+newline = "none"
+tabpad = "all"
+
+[editor.whitespace.characters]
+space = "_"
+nbsp = "⍽"
+nnbsp = "␣"
+tab = "→"
+# newline = "⏎"
+tabpad = "·" # Tabs will look like "→···" (depending on tab width)
+
+[editor.indent-guides]
+render = true
+character = "╎" # Some characters that work well: "▏", "┆", "┊", "⸽"
+skip-levels = 1
+
+[editor.gutters]
+layout = ["diff", "diagnostics", "line-numbers", "spacer"]
+
+# [editor.word-completion]
+# enable = true
+# trigger-length = 4
+
