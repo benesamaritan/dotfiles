@@ -2,7 +2,7 @@ theme = "base16_transparent"
 
 [editor]
 line-number = "relative"
-mouse = false
+mouse = true
 true-color = true
 
 [editor.cursor-shape]
